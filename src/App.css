@@ -1,9 +1,33 @@
+.mainContainer {
+  box-sizing: border-box;
+  padding: 1.5rem;
+  background: #ffffff;
+  border-radius: 22px;
+  width: 100vw;
+  height: 100vh;
+}
+
+.body_container {
+  padding: 2rem 4rem;
+
+  background: linear-gradient(
+    180deg,
+    #eff2ff -30.56%,
+    rgba(232, 236, 255, 0) 135.85%
+  );
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+}
+
 /*-------- Add new Account-------------------*/
 .newaccount_box {
   width: 488px;
   height: 406px;
-
+  background: #ffffff;
+  border-radius: 13px;
   filter: drop-shadow(0px 4px 16px rgba(0, 0, 0, 0.25));
+  padding: 25px 34px 30px 30px;
 }
 
 .newaccount_top {
@@ -14,13 +38,15 @@
 .close_round {
   width: 24px;
   height: 24px;
+  cursor: pointer;
 }
 .social_input {
   box-sizing: border-box;
 
   width: 424px;
   height: 40px;
-
+  margin-top: 5px;
+  margin-bottom: 23px;
   border: 1px solid #d9d9d9;
   border-radius: 38px;
 }
@@ -37,14 +63,18 @@
   color: #06163a;
 }
 
+.newaccount_buttongroup {
+  display: flex;
+  justify-content: flex-end;
+}
+
 .newaccount_cancel_button {
   width: 82.76px;
   height: 37.02px;
   background: #f5f7ff;
+  border: none;
   border-radius: 34px;
-}
 
-.newaccount_cancel_button_text {
   font-family: 'Poppins';
   font-style: normal;
   font-weight: 500;
@@ -57,10 +87,10 @@
   width: 82.76px;
   height: 37.02px;
   background: #744bfc;
+  border: none;
   border-radius: 34px;
-}
+  margin-left: 1rem;
 
-.newaccount_save_button_text {
   font-family: 'Poppins';
   font-style: normal;
   font-weight: 500;
@@ -75,7 +105,79 @@
   justify-content: space-between;
 }
 
-.header_box_nav {
+.header_box_nav1 {
+  display: flex;
+  gap: 2rem;
+}
+
+.header_box_nav_item {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+  text-decoration: none;
+  /* identical to box height */
+
+  color: #000000;
+}
+
+.header_box_nav2 {
+  display: flex;
+  gap: 14px;
+}
+
+.header_box_nav2_item {
+  cursor: pointer;
+}
+
+/*-------- BODY------------------*/
+.body_search_section {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.body_search_section_input {
+  background: #ffffff;
+  border-radius: 39px;
+  overflow: hidden;
+}
+
+.body_search_section_input_self {
+  border: none;
+}
+.body_search_section_input_self:focus {
+  outline: none;
+}
+
+.body_search_section_magnifyButton {
+  background: #744bfc;
+  border: none;
+  cursor: pointer;
+}
+
+.body_search_section_filter {
+  background: #ffffff;
+  border-radius: 29px;
+  margin-left: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.body_search_section_addButton {
+  background: #744bfc;
+  border-radius: 39px;
+  border: none;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+  /* identical to box height */
+  cursor: pointer;
+  color: #ffffff;
 }

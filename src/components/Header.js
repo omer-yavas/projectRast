@@ -1,21 +1,33 @@
-import Logo from '../assets/logo.png';
+import { rast_svg } from '../assets/svgFiles';
+import { instagram_svg } from '../assets/svgFiles';
+import { linkedin_svg } from '../assets/svgFiles';
+import { youtube_svg } from '../assets/svgFiles';
+import { be_svg } from '../assets/svgFiles';
 
 const Header = () => {
   return (
     <div className="header_box">
-      <div>
-        <img src={Logo} alt="Rast Logo" />
-      </div>
-      <nav className="header_box_nav">
-        <a href="../App">Hakkımızda</a>
-
-        <a href="../App">Jüri - Yarışma Yazılımı</a>
-
-        <a href="../App">Word Ninja</a>
-
-        <a href="../App">Word Pyramids</a>
+      <div>{rast_svg}</div>
+      <nav className="header_box_nav1">
+        <a href="../App" className="header_box_nav_item">
+          Hakkımızda
+        </a>
+        <a href="../App" className="header_box_nav_item">
+          Jüri - Yarışma Yazılımı
+        </a>
+        <a href="../App" className="header_box_nav_item">
+          Word Ninja
+        </a>
+        <a href="../App" className="header_box_nav_item">
+          Word Pyramids
+        </a>
       </nav>
-      <div>Symbols</div>
+      <nav className="header_box_nav2">
+        <div className="header_box_nav2_item">{youtube_svg}</div>
+        <div className="header_box_nav2_item">{instagram_svg}</div>
+        <div className="header_box_nav2_item">{be_svg}</div>
+        <div className="header_box_nav2_item">{linkedin_svg}</div>
+      </nav>
     </div>
   );
 };

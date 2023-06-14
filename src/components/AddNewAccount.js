@@ -1,29 +1,5 @@
 import { useState } from 'react';
-
-const crossSvg = (
-  <svg
-    width="24"
-    height="24"
-    viewBox="0 0 24 24"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path
-      d="M18 6L6 18"
-      stroke="#33363F"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-    />
-    <path
-      d="M6 6L18 18"
-      stroke="#33363F"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-    />
-  </svg>
-);
+import { cross_svg } from '../assets/svgFiles';
 
 const AddNewAccount = ({ changeState }) => {
   const [socialMediaLink, setSocialMediaLink] = useState('');
@@ -45,7 +21,7 @@ const AddNewAccount = ({ changeState }) => {
     <div className="newaccount_box">
       <div className="newaccount_top">
         <div className="close_round" onClick={cancelClickHandler}>
-          {crossSvg}
+          {cross_svg}
         </div>
       </div>
 
@@ -87,15 +63,15 @@ const AddNewAccount = ({ changeState }) => {
           />
         </div>
       </form>
-      <div>
+      <div className="newaccount_buttongroup">
         <button
           className="newaccount_cancel_button"
           onClick={cancelClickHandler}
         >
-          <p className="newaccount_cancel_button_text">Vazgeç</p>
+          Vazgeç
         </button>
         <button className="newaccount_save_button" onClick={saveClickHandler}>
-          <p className="newaccount_save_button_text">Kaydet</p>
+          Kaydet
         </button>
       </div>
     </div>
