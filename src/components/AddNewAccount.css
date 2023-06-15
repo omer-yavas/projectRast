@@ -1,0 +1,78 @@
+/*-------- Add new Account-------------------*/
+.newaccount_box {
+  width: 488px;
+  height: 406px;
+  background: #ffffff;
+  border-radius: 13px;
+  filter: drop-shadow(0px 4px 16px rgba(0, 0, 0, 0.25));
+  padding: 25px 34px 30px 30px;
+}
+
+.newaccount_top {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.close_round {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+.social_input {
+  box-sizing: border-box;
+  padding-left: 10px;
+  width: 424px;
+  height: 40px;
+  margin-top: 5px;
+  margin-bottom: 23px;
+  border: 1px solid #d9d9d9;
+  border-radius: 38px;
+}
+
+.newaccount_label {
+  display: block;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 20px;
+  /* identical to box height */
+
+  color: #06163a;
+}
+
+.newaccount_buttongroup {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.newaccount_cancel_button {
+  width: 82.76px;
+  height: 37.02px;
+  background: #f5f7ff;
+  border: none;
+  border-radius: 34px;
+
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13.418px;
+  line-height: 20px;
+  color: #744bfc;
+}
+
+.newaccount_save_button {
+  width: 82.76px;
+  height: 37.02px;
+  background: #744bfc;
+  border: none;
+  border-radius: 34px;
+  margin-left: 1rem;
+
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13.418px;
+  line-height: 20px;
+  color: #ffffff;
+}

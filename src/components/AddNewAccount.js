@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { cross_svg } from '../assets/svgFiles';
+import './AddNewAccount.css';
 
 const AddNewAccount = ({ changeState }) => {
   const [socialMediaLink, setSocialMediaLink] = useState('');
@@ -14,6 +15,19 @@ const AddNewAccount = ({ changeState }) => {
   }
 
   function saveClickHandler() {
+    if (socialMediaLink === '' && socialMediaName === '') {
+      alert('Sosyal Medya Linki ve Sosyal Medya Adının ikisi de boş olamaz!');
+      return;
+    }
+    let itemsArray = localStorage.getItem('items')
+      ? JSON.parse(localStorage.getItem('items'))
+      : [];
+    itemsArray.push({
+      socialMediaLink: socialMediaLink,
+      socialMediaName: socialMediaName,
+      description: description,
+    });
+    localStorage.setItem('items', JSON.stringify(itemsArray));
     cancelClickHandler();
   }
 

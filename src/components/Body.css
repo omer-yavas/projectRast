@@ -1,0 +1,133 @@
+.body_search_section {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.body_search_section_filter {
+  background: #ffffff;
+  border-radius: 29px;
+  margin-left: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.search-panel {
+  display: flex;
+}
+
+.search-input-group {
+  border-radius: 50px;
+  display: flex;
+}
+
+.search-input-group input {
+  border: none;
+  width: 300px;
+  padding: 0 30px;
+  border-radius: 50px 0 0 50px;
+  outline: none;
+  font-size: 14px;
+}
+
+.search-input-group span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 0.5rem;
+  background-color: #744bfc;
+  border-radius: 0 50px 50px 0;
+}
+
+.search-panel button {
+  margin-left: 10px;
+  background-color: #fff;
+  color: #744bfc;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  width: 49px;
+  height: 42px;
+  border-radius: 40px;
+}
+
+.body_search_section_addButton {
+  background: #744bfc;
+  border-radius: 39px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 8px 12px;
+  font-size: 14px;
+  cursor: pointer;
+  color: #ffffff;
+}
+
+.datagrid_box {
+  border: 1px solid #eaeaea;
+  border-radius: 8px;
+}
+
+.stripe_row_color {
+  background: linear-gradient(
+    180deg,
+    #eff2ff -30.56%,
+    rgba(232, 236, 255, 0) 135.85%
+  );
+}
+
+.dx-datagrid {
+  border-radius: 8px;
+}
+
+.dx-datagrid-table {
+  color: #000;
+  height: 66px;
+}
+
+.dx-row {
+  height: 66px;
+  font-size: 12px;
+  font-weight: 400;
+  overflow: scroll;
+  white-space: nowrap;
+}
+
+.dx-header-row {
+  font-weight: 500;
+  font-size: 13px;
+}
+
+.dx-datagrid-text-content {
+  height: 100%;
+}
+
+.dx-datagrid .dx-row > td {
+  padding: 20px;
+}
+
+.dx-datagrid-rowsview .dx-row-alt > td {
+  background: linear-gradient(
+    180deg,
+    #eff2ff -30.56%,
+    rgba(232, 236, 255, 0) 135.85%
+  );
+}
+
+@media (max-width: 768px) {
+  .body_search_section {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+  }
+  .body_search_section_addButton {
+    max-width: 11rem;
+  }
+}

@@ -1,13 +1,46 @@
 import 'devextreme/dist/css/dx.light.css';
-import { DataGrid, Column, Paging } from 'devextreme-react/data-grid';
-import { content } from '../content';
-import { useState } from 'react';
+import 'devextreme/dist/css/dx.common.css';
+import {
+  DataGrid,
+  Column,
+  Sorting,
+  Paging,
+  Pager,
+} from 'devextreme-react/data-grid';
+import { useEffect, useState } from 'react';
 import { magnifier_svg } from '../assets/svgFiles';
 import { union_svg } from '../assets/svgFiles';
 import AddNewAccount from './AddNewAccount';
+import DataRow from './DataRow.js';
+import { AiOutlinePlus } from 'react-icons/ai';
+import './Body.css';
+
+const pageSizes = [4, 8, 12, 16, 20];
 
 const Body = () => {
   const [addingNewAccount, setAddingNewAccount] = useState(false);
+  const [search, setSearch] = useState('');
+  const [pageSize, setPageSize] = useState(4);
+
+  const localData = () => {
+    if (!JSON.parse(localStorage.getItem('items'))) {
+      return [];
+    }
+    const data = JSON.parse(localStorage.getItem('items'));
+    const indexedData = data.map((item, index) => {
+      return { id: index, ...item };
+    });
+
+    return indexedData;
+  };
+
+  const filteredData = localData().filter((data) => {
+    return (
+      data.socialMediaName.toLowerCase().includes(search.toLowerCase()) ||
+      data.description.toLowerCase().includes(search.toLowerCase())
+    );
+  });
+
   return (
     <div className="body_container">
       {addingNewAccount ? (
@@ -15,29 +48,56 @@ const Body = () => {
       ) : (
         <div>
           <div className="body_search_section">
-            <div style={{ display: 'flex' }}>
-              <div className="body_search_section_input">
-                <input className="body_search_section_input_self"></input>
-                <button className="body_search_section_magnifyButton">
-                  {magnifier_svg}
-                </button>
+            <div className="search-panel">
+              <div className="search-input-group">
+                <input
+                  type="text"
+                  placeholder="Search objects..."
+                  onChange={(e) => setSearch(e.target.value)}
+                />
+                <span>{magnifier_svg}</span>
               </div>
-              <div className="body_search_section_filter">{union_svg}</div>
+              <button>
+                <>{union_svg}</>
+              </button>
             </div>
-
             <button
               className="body_search_section_addButton"
               onClick={() => setAddingNewAccount(true)}
             >
-              + Yeni Hesap Ekle
+              <AiOutlinePlus size={18} className="icon" />
+              <p>Yeni Hesap Ekle</p>
             </button>
           </div>
-          <DataGrid id="dataGrid" dataSource={content}>
-            <Column dataField="socialMediaLink"></Column>
-            <Column dataField="socialMediaName"></Column>
-            <Column dataField="description"></Column>
-            <Paging defaultPageSize={15} defaultPageIndex={1} />
-          </DataGrid>
+          <div className="datagrid_box">
+            <DataGrid
+              dataSource={filteredData}
+              rowAlternationEnabled={true}
+              //focusedRowEnabled={true}
+              keyExpr="id"
+              //dataRowRender={DataRow}
+              showBorders={false}
+            >
+              <Sorting mode="multiple" />
+              <Column
+                dataField="socialMediaLink"
+                caption="Sosyal Medya Linki"
+              ></Column>
+              <Column
+                dataField="socialMediaName"
+                caption="Sosyal Medya Adı"
+              ></Column>
+              <Column dataField="description" caption="Açıklama"></Column>
+              <Paging defaultPageSize={pageSize} />
+              <Pager
+                allowedPageSizes={pageSizes}
+                showPageSizeSelector={true}
+                displayMode={'compact'}
+                showNavigationButtons={true}
+                visible={true}
+              />
+            </DataGrid>
+          </div>
         </div>
       )}
     </div>
