@@ -7,6 +7,7 @@ const AddNewAccount = ({ changeState }) => {
   const [socialMediaName, setSocialMediaName] = useState('');
   const [description, setDescription] = useState('');
 
+  //Kullanıcı veri girmekten vazgeçtiğinde , Vazgeç butonuna tıklaması ile bu kapatma fonksiyonu çağırılıyor.
   function cancelClickHandler() {
     setSocialMediaLink('');
     setSocialMediaName('');
@@ -14,6 +15,8 @@ const AddNewAccount = ({ changeState }) => {
     changeState(false);
   }
 
+  //Kaydet butonuna basılması ile saveClickHandler() fonksiyonu çağırılıyor. Eğer boş girdi kaydedilmeye
+  //çalışılıyorsa alert ile ikaz veriyor, değilse localStorage a kaydediyor.
   function saveClickHandler() {
     if (socialMediaLink === '' && socialMediaName === '') {
       alert('Sosyal Medya Linki ve Sosyal Medya Adının ikisi de boş olamaz!');

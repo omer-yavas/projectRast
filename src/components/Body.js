@@ -7,11 +7,10 @@ import {
   Paging,
   Pager,
 } from 'devextreme-react/data-grid';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { magnifier_svg } from '../assets/svgFiles';
 import { union_svg } from '../assets/svgFiles';
 import AddNewAccount from './AddNewAccount';
-import DataRow from './DataRow.js';
 import { AiOutlinePlus } from 'react-icons/ai';
 import './Body.css';
 
@@ -22,6 +21,8 @@ const Body = () => {
   const [search, setSearch] = useState('');
   const [pageSize, setPageSize] = useState(4);
 
+  //localStorage dan alınan veriler kontrol ediliyor. Eğer bizim sosyal medya hesaplarını depoladığımız
+  // items nesnesi varsa object haline getiriliyor, yoksa boş array dönüyor.
   const localData = () => {
     if (!JSON.parse(localStorage.getItem('items'))) {
       return [];
@@ -34,6 +35,7 @@ const Body = () => {
     return indexedData;
   };
 
+  //Kullanıcının search kısmında girdiği text burada filtreleniyor.
   const filteredData = localData().filter((data) => {
     return (
       data.socialMediaName.toLowerCase().includes(search.toLowerCase()) ||
@@ -73,9 +75,7 @@ const Body = () => {
             <DataGrid
               dataSource={filteredData}
               rowAlternationEnabled={true}
-              //focusedRowEnabled={true}
               keyExpr="id"
-              //dataRowRender={DataRow}
               showBorders={false}
             >
               <Sorting mode="multiple" />

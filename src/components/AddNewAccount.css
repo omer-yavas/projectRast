@@ -1,4 +1,3 @@
-/*-------- Add new Account-------------------*/
 .newaccount_box {
   width: 488px;
   height: 406px;
@@ -36,8 +35,6 @@
   font-weight: 500;
   font-size: 13px;
   line-height: 20px;
-  /* identical to box height */
-
   color: #06163a;
 }
 

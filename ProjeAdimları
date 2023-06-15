@@ -1,0 +1,11 @@
+Projede kullanıcının girdiği sosyal medya bilgileri, kaydet butonuna basılması ile birlikte localStorage'a kaydedilecektir. localStorage da tutulan veriler de, yeni eklenenler de dahil, datagrid de listelenecektir. Kullanıcı verileri search kısmından filtreleyebilir, sayfada görünen data satır sayısını ayarlayabilir.
+
+--> Uygulama da oluşturulacak componentler belirlendi,
+
+--> Kullanılacak kütüphaneler projeye eklendi,
+
+--> Belirlenen componentler , figma dökümanındaki tasarıma göre kodlandı,
+
+-->Girilen verilerin localStorage a depolanması ve dataGrid de listelenmesi için gerekli fonksiyonlar kodlandı,
+
+-->Verileri filtreleme fonksiyonları tanımlandı
